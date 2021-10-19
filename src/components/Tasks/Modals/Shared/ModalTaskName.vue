@@ -5,6 +5,7 @@
       @input="$emit('update:name', $event)"
       class="col"
       autofocus
+      v-select-all
       ref="name"
       label="Task Name" 
       outlined 
@@ -23,7 +24,11 @@
 </template>
 
 <script>
+import { selectAll } from 'src/directives/directive-select-all'
 export default {
-  props: ['name']
+  props: ['name'],
+  directives: {
+    selectAll
+  }
 }
 </script>
